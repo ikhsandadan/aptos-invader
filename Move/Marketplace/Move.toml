@@ -1,0 +1,15 @@
+[package]
+name = "list_and_purchase"
+version = "1.0.0"
+upgrade_policy = "compatible"
+
+[addresses]
+marketplace = "_"
+
+[dependencies]
+AptosFramework = { git = "https://github.com/aptos-labs/aptos-core.git", subdir = "aptos-move/framework/aptos-framework/", rev = "mainnet" }
+AptosTokenObjects = { git = "https://github.com/aptos-labs/aptos-core.git", subdir = "aptos-move/framework/aptos-token-objects", rev = "mainnet" }
+
+# For use when developing and testing this module
+[dev-addresses]
+marketplace = "0x100"

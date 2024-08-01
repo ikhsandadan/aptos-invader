@@ -1,0 +1,15 @@
+[package]
+name = "aptosinvader"
+version = "1.0.0"
+upgrade_policy = "compatible"
+
+[addresses]
+aptos_invader = "_"
+
+[dependencies]
+AptosFramework = { git = "https://github.com/aptos-labs/aptos-core.git", subdir = "aptos-move/framework/aptos-framework/", rev = "mainnet" }
+AptosTokenObjects = {git = "https://github.com/aptos-labs/aptos-core.git", subdir = "aptos-move/framework/aptos-token-objects", rev = "mainnet"}
+
+# For use when developing and testing this module
+[dev-addresses]
+aptos_invader = "0x100"
