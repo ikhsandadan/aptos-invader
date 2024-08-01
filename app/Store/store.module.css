@@ -15,6 +15,7 @@
     cursor: pointer;
     transition: all .3s ease-in;
     color: #696969;
+    max-width: max-content;
 }
 
 .NFTCard_box:hover {
