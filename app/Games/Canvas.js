@@ -8,8 +8,9 @@ const Canvas = ({ setScores, ship, aliens, bosses, items, setHp, setCollectedIte
             if (document.readyState === 'complete') {
                 const canvas = ref.current;
                 const context = canvas.getContext("2d");
-                canvas.width = 1024;
-                canvas.height = 576;
+                const size = document.getElementById("canvas");
+                canvas.width = size.width * 2.3;
+                canvas.height = size.height * 2;
                 context.fillStyle = "white";
                 context.strokeStyle = "white";
                 context.lineWidth = 5;
