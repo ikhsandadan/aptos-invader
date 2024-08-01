@@ -1221,8 +1221,8 @@ const Canvas = ({ setScores, ship, aliens, bosses, items, setHp, setCollectedIte
             ref={ref} 
             id="canvas" 
             style={{
-                maxWidth: '100vh',
-                maxHeight: '100vh',
+                maxWidth: '100%',
+                maxHeight: '100%',
                 objectFit: 'contain'
             }} 
         />
