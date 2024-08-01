@@ -14,7 +14,7 @@ const Canvas = ({ setScores, ship, aliens, bosses, items, setHp, setCollectedIte
                     const { width, height } = canvas.getBoundingClientRect();
                     const dpr = window.devicePixelRatio || 1;
                     canvas.width = width * dpr;
-                    canvas.height = height * dpr;
+                    canvas.height = height * (dpr/2);
                     context.scale(dpr, dpr);
                 };
 
