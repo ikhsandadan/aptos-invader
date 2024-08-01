@@ -2,8 +2,8 @@ import { useEffect, useRef } from 'react';
 
 const Canvas = ({ setScores, ship, aliens, bosses, items, setHp, setCollectedItems }) => {
     const ref = useRef();
-    const CANVAS_WIDTH = 800;
-    const CANVAS_HEIGHT = 600;
+    const CANVAS_WIDTH = 1074;
+    const CANVAS_HEIGHT = 576;
 
     useEffect(() => {
         try {
