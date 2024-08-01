@@ -99,7 +99,7 @@ const Store: FC = () => {
 
     return (
         <div style={{ minHeight: '75vh' }} className='flex flex-col gap-6 justify-center mt-20'>
-            <h1 className='w-full text-center text-3xl mt-2'>Store</h1>
+            <h1 className='w-auto text-center text-3xl mt-2'>Store</h1>
             <div className={Style.NFTCard}>
                 {spaceships.map((ship: Ship, i: number) => (
                     <div className={Style.NFTCard_box} key={i} onClick={() => handleBuySpaceShip(ship)}>
