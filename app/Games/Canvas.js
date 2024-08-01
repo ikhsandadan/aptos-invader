@@ -1242,7 +1242,7 @@ const Canvas = ({ setScores, ship, aliens, bosses, items, setHp, setCollectedIte
                     maxHeight: '100vh',
                     objectFit: 'contain'
                 }} 
-                className='self-center justify-self-center w-full h-full'
+                className='self-center justify-self-center'
             ></canvas>;
 };
 
