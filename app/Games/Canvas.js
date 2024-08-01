@@ -1240,7 +1240,7 @@ const Canvas = ({ setScores, ship, aliens, bosses, items, setHp, setCollectedIte
     return (
          <div style={{ 
             width: '100vw', 
-            height: '100vh', 
+            height: '70vh', 
             display: 'flex', 
             justifyContent: 'center', 
             alignItems: 'center',
