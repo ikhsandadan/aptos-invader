@@ -132,7 +132,7 @@ const Homepage = () => {
     return (
         <div style={{minHeight: '75vh'}} className='flex flex-col gap-4 items-center justify-center mt-20'>
             {userAddress ? (
-                <div className='flex flex-col items-center min-w-full'>
+                <div className='flex flex-col items-center min-w-full min-h-full'>
                     {!startGame ? (
                         <div className='flex flex-col'>
                             <div className='flex flex-col gap-y-4 mx-5 sm:mx-20 lg:mx-28 py-10'>
