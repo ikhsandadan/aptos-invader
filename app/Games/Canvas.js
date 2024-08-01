@@ -1217,24 +1217,15 @@ const Canvas = ({ setScores, ship, aliens, bosses, items, setHp, setCollectedIte
     }, []);
 
    return (
-        <div style={{ 
-            width: '100vw', 
-            height: '100vh', 
-            display: 'flex', 
-            justifyContent: 'center', 
-            alignItems: 'center',
-            overflow: 'hidden'
-        }}>
-            <canvas 
-                ref={ref} 
-                id="canvas" 
-                style={{
-                    maxWidth: '100%',
-                    maxHeight: '100%',
-                    objectFit: 'contain'
-                }} 
-            />
-        </div>
+        <canvas 
+            ref={ref} 
+            id="canvas" 
+            style={{
+                maxWidth: '100vh',
+                maxHeight: '100vh',
+                objectFit: 'contain'
+            }} 
+        />
     );
 };
 
