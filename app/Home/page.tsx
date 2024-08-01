@@ -133,81 +133,83 @@ const Homepage = () => {
         <div style={{minHeight: '75vh'}} className='flex flex-col gap-4 items-center justify-center mt-20'>
             {userAddress ? (
                 <div className='flex flex-col items-center max-w-max'>
-                    {!startGame ? (
-                        <div className='flex flex-col'>
-                            <div className='flex flex-col gap-y-4 mx-5 sm:mx-20 lg:mx-28 py-10'>
-                                <h1 className='text-xl md:text-2xl font-bold text-center'>🚀 Welcome to, Aptos Invader!</h1>
-                            </div>
-                            <div className='flex flex-col items-center gap-12 max-w-screen w-full px-8'>
-                                <div className='flex flex-col p-6 max-w-max'>
-                                    <h2 className='w-full text-2xl text-center mt-4'>Free Spaceships</h2>
-                                    <div className='grid grid-flow-col auto-cols-auto gap-8 justify-center p-8'>
-                                        <IconButton onClick={() => handleStartGame(spaceships[0])}>
-                                            <div className='rounded-md bg-transparent hover:scale-150 hover:shadow-[0_0_10px_#25fff2] hover:m-4 transition duration-500'>
-                                                <img src={spaceships[0].icon} className='size-32 hover:scale-x-105'/>
-                                            </div>
-                                        </IconButton>
-                                    </div>
-
-                                    <h2 className='w-full text-2xl text-center mt-4'>Purchased Spaceship</h2>
-                                    <div className='grid grid-flow-col auto-cols-auto gap-8 justify-center p-8'>
-                                        {mySpaceships.map((myShip: any, index: number) => (
-                                            <IconButton onClick={() => handleStartGame(myShip)} key={index}>
+                    <div id="canvas">
+                        {!startGame ? (
+                            <div className='flex flex-col'>
+                                <div className='flex flex-col gap-y-4 mx-5 sm:mx-20 lg:mx-28 py-10'>
+                                    <h1 className='text-xl md:text-2xl font-bold text-center'>🚀 Welcome to, Aptos Invader!</h1>
+                                </div>
+                                <div className='flex flex-col items-center gap-12 max-w-screen w-full px-8'>
+                                    <div className='flex flex-col p-6 max-w-max'>
+                                        <h2 className='w-full text-2xl text-center mt-4'>Free Spaceships</h2>
+                                        <div className='grid grid-flow-col auto-cols-auto gap-8 justify-center p-8'>
+                                            <IconButton onClick={() => handleStartGame(spaceships[0])}>
                                                 <div className='rounded-md bg-transparent hover:scale-150 hover:shadow-[0_0_10px_#25fff2] hover:m-4 transition duration-500'>
-                                                    <img src={myShip.icon} className='size-32 hover:scale-x-105'/>
+                                                    <img src={spaceships[0].icon} className='size-32 hover:scale-x-105'/>
                                                 </div>
                                             </IconButton>
-                                        ))}
-                                    </div>
-                                </div>
-                                <div className='flex flex-col p-6 w-full max-w-4xl border-t-2 items-center'>
-                                    <div className='xl:w-full max-w-6xl flex flex-col items-center gap-y-9 mx-5 sm:mx-8 md:mx-9 xl:mx-auto pt-14 pb-20 md:pb-10 lg:pb-32 xl:pb-20'>
-                                        <div className='flex sm:flex-row flex-col items-center gap-y-2 px-2 sm:px-0 w-full'>
-                                            <h2 className='w-full text-2xl text-center font-bold'>Leaderboard</h2>
-                                            <a onClick={handleLeaderboard} className='flex items-center justify-between font-semibold ml-auto border border-grayscale-2 rounded-lg px-4 py-2 w-full sm:w-auto hover:bg-black cursor-pointer'>
-                                                <span>Leaderboard</span>
-                                                <img src='arrowright.svg' className='ml-2 mr-4 w-6 h-6' alt="Arrow right" />
-                                            </a>
                                         </div>
-                                        <div className='w-full overflow-x-auto'>
-                                            <table className='w-full border-collapse'>
-                                                <thead>
-                                                    <tr className='bg-gray-300 dark:bg-gray-700'>
-                                                        <th className='p-2 text-left font-bold'>Rank</th>
-                                                        <th className='p-2 text-left font-bold'>User Address</th>
-                                                        <th className='p-2 text-right font-bold'>Score</th>
-                                                        <th className='p-2 text-right font-bold'>Games Played</th>
-                                                        <th className='p-2 text-left font-bold'>Spaceship</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    {getTop10Leaderboard().map((user, index) => (
-                                                        <tr key={index} className={`border-b last:border-b-0 ${user.addr === userAddress.toString() ? 'bg-gray-200 dark:bg-gray-600' : ''}`}>
-                                                            <td className='p-2 text-left font-semibold'>{index + 1}</td>
-                                                            <td className='p-2 text-left font-mono'>{`0x${user.addr.substring(2, 6)}...${user.addr.substring(user.addr.length - 5)}`}</td>
-                                                            <td className='p-2 text-right'>{user.best_score.toLocaleString()}</td>
-                                                            <td className='p-2 text-right'>{user.games_played.toLocaleString()}</td>
-                                                            <td className='p-2 text-left'>{user.spaceship}</td>
+    
+                                        <h2 className='w-full text-2xl text-center mt-4'>Purchased Spaceship</h2>
+                                        <div className='grid grid-flow-col auto-cols-auto gap-8 justify-center p-8'>
+                                            {mySpaceships.map((myShip: any, index: number) => (
+                                                <IconButton onClick={() => handleStartGame(myShip)} key={index}>
+                                                    <div className='rounded-md bg-transparent hover:scale-150 hover:shadow-[0_0_10px_#25fff2] hover:m-4 transition duration-500'>
+                                                        <img src={myShip.icon} className='size-32 hover:scale-x-105'/>
+                                                    </div>
+                                                </IconButton>
+                                            ))}
+                                        </div>
+                                    </div>
+                                    <div className='flex flex-col p-6 w-full max-w-4xl border-t-2 items-center'>
+                                        <div className='xl:w-full max-w-6xl flex flex-col items-center gap-y-9 mx-5 sm:mx-8 md:mx-9 xl:mx-auto pt-14 pb-20 md:pb-10 lg:pb-32 xl:pb-20'>
+                                            <div className='flex sm:flex-row flex-col items-center gap-y-2 px-2 sm:px-0 w-full'>
+                                                <h2 className='w-full text-2xl text-center font-bold'>Leaderboard</h2>
+                                                <a onClick={handleLeaderboard} className='flex items-center justify-between font-semibold ml-auto border border-grayscale-2 rounded-lg px-4 py-2 w-full sm:w-auto hover:bg-black cursor-pointer'>
+                                                    <span>Leaderboard</span>
+                                                    <img src='arrowright.svg' className='ml-2 mr-4 w-6 h-6' alt="Arrow right" />
+                                                </a>
+                                            </div>
+                                            <div className='w-full overflow-x-auto'>
+                                                <table className='w-full border-collapse'>
+                                                    <thead>
+                                                        <tr className='bg-gray-300 dark:bg-gray-700'>
+                                                            <th className='p-2 text-left font-bold'>Rank</th>
+                                                            <th className='p-2 text-left font-bold'>User Address</th>
+                                                            <th className='p-2 text-right font-bold'>Score</th>
+                                                            <th className='p-2 text-right font-bold'>Games Played</th>
+                                                            <th className='p-2 text-left font-bold'>Spaceship</th>
                                                         </tr>
-                                                    ))}
-                                                </tbody>
-                                            </table>
+                                                    </thead>
+                                                    <tbody>
+                                                        {getTop10Leaderboard().map((user, index) => (
+                                                            <tr key={index} className={`border-b last:border-b-0 ${user.addr === userAddress.toString() ? 'bg-gray-200 dark:bg-gray-600' : ''}`}>
+                                                                <td className='p-2 text-left font-semibold'>{index + 1}</td>
+                                                                <td className='p-2 text-left font-mono'>{`0x${user.addr.substring(2, 6)}...${user.addr.substring(user.addr.length - 5)}`}</td>
+                                                                <td className='p-2 text-right'>{user.best_score.toLocaleString()}</td>
+                                                                <td className='p-2 text-right'>{user.games_played.toLocaleString()}</td>
+                                                                <td className='p-2 text-left'>{user.spaceship}</td>
+                                                            </tr>
+                                                        ))}
+                                                    </tbody>
+                                                </table>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    ) : (
-                        <Canvas
-                            setScores={setScores}
-                            ship={ship}
-                            aliens={aliens}
-                            bosses={bosses}
-                            items={items}
-                            setHp={setHp}
-                            setCollectedItems={setCollectedItems}
-                        />
-                    )}
+                        ) : (
+                            <Canvas
+                                setScores={setScores}
+                                ship={ship}
+                                aliens={aliens}
+                                bosses={bosses}
+                                items={items}
+                                setHp={setHp}
+                                setCollectedItems={setCollectedItems}
+                            />
+                        )}
+                    </div>
                 </div>
             ) : (
                 <h1 className='w-full text-center text-3xl'>Please connect your wallet</h1>
