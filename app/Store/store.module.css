@@ -1,7 +1,7 @@
 .NFTCard {
     width: 80%;
     margin: 0 auto;
-    display: grid;
+    display: flex;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem; /* Reduced gap */
     margin-bottom: 2rem;
