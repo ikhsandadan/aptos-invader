@@ -1216,7 +1216,7 @@ const Canvas = ({ setScores, ship, aliens, bosses, items, setHp, setCollectedIte
         }
     }, []);
 
-    return <canvas ref={ref} id="canvas" style={{backgroundPositionY: 0}} className='self-center justify-self-center'></canvas>;
+    return <canvas ref={ref} id="canvas" style={{backgroundPositionY: 0}} className='self-center justify-self-center w-full h-full'></canvas>;
 };
 
 export default Canvas;
