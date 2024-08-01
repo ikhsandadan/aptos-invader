@@ -2,31 +2,15 @@ import { useEffect, useRef } from 'react';
 
 const Canvas = ({ setScores, ship, aliens, bosses, items, setHp, setCollectedItems }) => {
     const ref = useRef();
-    const CANVAS_WIDTH = 1074;
-    const CANVAS_HEIGHT = 576;
 
     useEffect(() => {
         try {
             if (document.readyState === 'complete') {
                 const canvas = ref.current;
                 const context = canvas.getContext("2d");
-                
-                // Set the canvas size
-                canvas.width = CANVAS_WIDTH;
-                canvas.height = CANVAS_HEIGHT;
-
-                const resizeCanvas = () => {
-                    const containerWidth = window.innerWidth;
-                    const containerHeight = window.innerHeight;
-                    const scale = Math.min(containerWidth / CANVAS_WIDTH, containerHeight / CANVAS_HEIGHT);
-                    
-                    canvas.style.width = `${CANVAS_WIDTH * scale}px`;
-                    canvas.style.height = `${CANVAS_HEIGHT * scale}px`;
-                };
-
-                resizeCanvas();
-                window.addEventListener('resize', resizeCanvas);
-                
+                const size = document.getElementById("canvas");
+                canvas.width = size.width * 2.3;
+                canvas.height = size.height * 2;
                 context.fillStyle = "white";
                 context.strokeStyle = "white";
                 context.lineWidth = 5;
@@ -1226,21 +1210,16 @@ const Canvas = ({ setScores, ship, aliens, bosses, items, setHp, setCollectedIte
 
                 setBackgroundMoving();
                 animate(0);
-
-                // Clean up
-                return () => {
-                    window.removeEventListener('resize', resizeCanvas);
-                };
             }
         } catch(e) {
             console.log(e);
         }
     }, []);
 
-    return (
-         <div style={{ 
+   return (
+        <div style={{ 
             width: '100vw', 
-            height: '70vh', 
+            height: '100vh', 
             display: 'flex', 
             justifyContent: 'center', 
             alignItems: 'center',
