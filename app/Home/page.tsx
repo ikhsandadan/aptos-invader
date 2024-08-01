@@ -143,7 +143,7 @@ const Homepage = () => {
                                 <h1 className='text-xl md:text-2xl font-bold text-center'>🚀 Welcome to, Aptos Invader!</h1>
                             </div>
                             <div className='flex flex-col items-center gap-12 max-w-screen w-full px-8'>
-                                <h2 className='w-full text-2xl text-center'>Free Spaceships</h2>
+                                <h1 className='text-center text-3xl font-bold'>Choose your Spaceship</h1>
                                 <div className='flex flex-col p-6 max-w-max'>
                                     <h2 className='w-full text-2xl text-center'>Free Spaceships</h2>
                                     <div className='grid grid-flow-col auto-cols-auto gap-8 justify-center p-8'>
