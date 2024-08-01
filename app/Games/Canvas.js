@@ -8,9 +8,19 @@ const Canvas = ({ setScores, ship, aliens, bosses, items, setHp, setCollectedIte
             if (document.readyState === 'complete') {
                 const canvas = ref.current;
                 const context = canvas.getContext("2d");
-                const size = document.getElementById("canvas");
-                canvas.width = size.width * 2.3;
-                canvas.height = size.height * 2;
+                
+                // Set canvas size to match its display size
+                const resizeCanvas = () => {
+                    const { width, height } = canvas.getBoundingClientRect();
+                    const dpr = window.devicePixelRatio || 1;
+                    canvas.width = width * dpr;
+                    canvas.height = height * dpr;
+                    context.scale(dpr, dpr);
+                };
+
+                resizeCanvas();
+                window.addEventListener('resize', resizeCanvas);
+                
                 context.fillStyle = "white";
                 context.strokeStyle = "white";
                 context.lineWidth = 5;
@@ -1210,13 +1220,30 @@ const Canvas = ({ setScores, ship, aliens, bosses, items, setHp, setCollectedIte
 
                 setBackgroundMoving();
                 animate(0);
+
+                // Clean up
+                return () => {
+                    window.removeEventListener('resize', resizeCanvas);
+                };
             }
         } catch(e) {
             console.log(e);
         }
     }, []);
 
-    return <canvas ref={ref} id="canvas" style={{backgroundPositionY: 0}} className='self-center justify-self-center w-full h-full'></canvas>;
+    return <canvas 
+                ref={ref} 
+                id="canvas"
+                style={{
+                    backgroundPositionY: 0,
+                    width: '100%',
+                    height: '100%',
+                    maxWidth: '100vw',
+                    maxHeight: '100vh',
+                    objectFit: 'contain'
+                }} 
+                className='self-center justify-self-center w-full h-full'
+            ></canvas>;
 };
 
 export default Canvas;
