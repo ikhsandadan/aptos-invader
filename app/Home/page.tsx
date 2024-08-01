@@ -202,7 +202,7 @@ const Homepage = () => {
                             </div>
                         </div>
                     ) : (
-                        <div className='flex flex-col items-center'>
+                        <div className='flex flex-col items-center mt-10'>
                             <Canvas
                                 setScores={setScores}
                                 ship={ship}
