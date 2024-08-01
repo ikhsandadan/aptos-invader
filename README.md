@@ -1,6 +1,4 @@
 
-<![endif]-->
-
 # Aptos Invader
 
 Link to Aptos Invader app: [Aptos-Invader](https://aptos-invader.vercel.app/)
