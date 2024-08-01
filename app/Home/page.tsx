@@ -143,8 +143,9 @@ const Homepage = () => {
                                 <h1 className='text-xl md:text-2xl font-bold text-center'>🚀 Welcome to, Aptos Invader!</h1>
                             </div>
                             <div className='flex flex-col items-center gap-12 max-w-screen w-full px-8'>
+                                <h2 className='w-full text-2xl text-center'>Free Spaceships</h2>
                                 <div className='flex flex-col p-6 max-w-max'>
-                                    <h2 className='w-full text-2xl text-center mt-4'>Free Spaceships</h2>
+                                    <h2 className='w-full text-2xl text-center'>Free Spaceships</h2>
                                     <div className='grid grid-flow-col auto-cols-auto gap-8 justify-center p-8'>
                                         <IconButton onClick={() => handleStartGame(spaceships[0])}>
                                             <div className='rounded-md bg-transparent hover:scale-150 hover:shadow-[0_0_10px_#25fff2] hover:m-4 transition duration-500'>
@@ -163,6 +164,9 @@ const Homepage = () => {
                                             </IconButton>
                                         ))}
                                     </div>
+
+                                    <div className="text-3xl font-bold text-center text-white mb-3">How To Play:</div>
+                                    <div className="text-2xl font-bold text-center text-white">Press the "x" button to shoot, Left Control (CTRL) to shoot laser, and arrows to move left or right!</div>
                                 </div>
                                 <div className='flex flex-col p-6 w-full max-w-4xl border-t-2 items-center'>
                                     <div className='xl:w-full max-w-6xl flex flex-col items-center gap-y-9 mx-5 sm:mx-8 md:mx-9 xl:mx-auto pt-14 pb-20 md:pb-10 lg:pb-32 xl:pb-20'>
