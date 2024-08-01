@@ -1223,7 +1223,8 @@ const Canvas = ({ setScores, ship, aliens, bosses, items, setHp, setCollectedIte
             style={{
                 maxWidth: '100%',
                 maxHeight: '100%',
-                objectFit: 'contain'
+                objectFit: 'contain',
+                backgroundPositionY: 0
             }} 
         />
     );
