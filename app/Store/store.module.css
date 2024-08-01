@@ -1,18 +1,16 @@
-
 .NFTCard {
     width: 80%;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
+    gap: 2rem; /* Reduced gap */
     margin-bottom: 2rem;
 }
 
 .NFTCard_box {
     background-color: var(--shadow-light-color);
-    padding: 1rem;
-    border-radius: 1rem;
-
+    padding: 0.75rem; /* Reduced padding */
+    border-radius: 0.75rem; /* Reduced border-radius */
     display: grid;
     cursor: pointer;
     transition: all .3s ease-in;
@@ -25,13 +23,12 @@
 
 .NFTCard_box:hover .NFTCard_box_img_img {
     transform: scale(1.05);
-    border-radius: 1rem;
+    border-radius: 0.75rem; /* Match reduced border-radius */
 }
 
 .NFTCard_box_update {
     grid-column: 1 / -1;
     grid-row: 1 / -2;
-
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
@@ -41,7 +38,7 @@
 
 .NFTCard_box_update_right {
     background-color: var(--shadow-light-color);
-    padding: 1.5rem 2rem;
+    padding: 1rem 1.5rem; /* Reduced padding */
     text-align: end;
     margin-right: -1rem;
 }
@@ -51,23 +48,23 @@
 }
 
 .NFTCard_box_update_right_info p {
-    font-size: 1.5rem;
+    font-size: 1.25rem; /* Reduced font-size */
     font-weight: 800;
     color: #4c5773;
 }
 
 .NFTCard_box_update_left {
     background-color: var(--icons-color);
-    padding: 1.5rem 1rem;
+    padding: 1rem 0.75rem; /* Reduced padding */
     color: var(--main-bg-color);
-    border-radius: 2rem;
+    border-radius: 1.5rem; /* Reduced border-radius */
     margin-bottom: 1rem;
 }
 
 .NFTCard_box_update_left_price {
     display: flex;
     align-items: center;
-    font-size: 1.2rem;
+    font-size: 1rem; /* Reduced font-size */
     gap: .5rem;
 }
 
@@ -79,11 +76,11 @@
     grid-column: 1 / -1;
     grid-row: 1 / end;
     overflow: hidden;
-    border-radius: 1rem;
+    border-radius: 0.75rem; /* Reduced border-radius */
 }
 
 .NFTCard_box_img_img {
-    border-radius: 1rem;
+    border-radius: 0.75rem; /* Match reduced border-radius */
     transition: all .4s ease-in;
     width: 100%;
     height: auto;
@@ -99,7 +96,7 @@
     }
 
     .NFTCard_box_update_right {
-        padding: .5rem 2rem;
+        padding: .5rem 1.5rem; /* Reduced padding */
     }
 
     .NFTCard_box_update_right_info p {
@@ -114,7 +111,7 @@
     }
 
     .NFTCard_box_update_right {
-        padding: .5rem 2rem;
+        padding: .5rem 1.5rem; /* Reduced padding */
     }
 
     .NFTCard_box_update_right_info p {
