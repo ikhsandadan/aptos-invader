@@ -21,3 +21,8 @@ Dive into the cosmic frontier with our blockchain-powered Space Invaders game! B
 - **Global Leaderboard**: Compete for intergalactic supremacy
 
 Experience the future of gaming where every achievement is truly yours. Ready to defend the blockchain universe?
+
+
+Here's a video demonstrating how to use the app.
+
+[![aptos-invader-demo](https://img.youtube.com/vi/_JLj2ZM_2rpE/0.jpg)](https://www.youtube.com/watch?v=_JLj2ZM_2rpE)
