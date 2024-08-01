@@ -1,10 +1,6 @@
 .NFTCard {
     width: 80%;
     margin: 0 auto;
-    display: grid; /* Use grid display */
-    grid-template-columns: repeat(3, 1fr); /* Defines a 3-column grid */
-    gap: 3rem;
-    margin-bottom: 2rem;
 }
 
 .NFTCard_box {
