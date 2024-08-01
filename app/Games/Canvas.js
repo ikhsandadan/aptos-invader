@@ -2,7 +2,8 @@ import { useEffect, useRef } from 'react';
 
 const Canvas = ({ setScores, ship, aliens, bosses, items, setHp, setCollectedItems }) => {
     const ref = useRef();
-    const ASPECT_RATIO = 9 / 16;
+    const CANVAS_WIDTH = 800;
+    const CANVAS_HEIGHT = 600;
 
     useEffect(() => {
         try {
@@ -10,33 +11,20 @@ const Canvas = ({ setScores, ship, aliens, bosses, items, setHp, setCollectedIte
                 const canvas = ref.current;
                 const context = canvas.getContext("2d");
                 
+                // Set the canvas size
+                canvas.width = CANVAS_WIDTH;
+                canvas.height = CANVAS_HEIGHT;
+
                 const resizeCanvas = () => {
-                    const containerWidth = canvas.parentElement.clientWidth;
-                    const containerHeight = canvas.parentElement.clientHeight;
+                    const containerWidth = window.innerWidth;
+                    const containerHeight = window.innerHeight;
+                    const scale = Math.min(containerWidth / CANVAS_WIDTH, containerHeight / CANVAS_HEIGHT);
                     
-                    let canvasWidth, canvasHeight;
-                    
-                    if (containerWidth / containerHeight > ASPECT_RATIO) {
-                        // Container is wider than the desired aspect ratio
-                        canvasHeight = containerHeight;
-                        canvasWidth = canvasHeight * ASPECT_RATIO;
-                    } else {
-                        // Container is taller than the desired aspect ratio
-                        canvasWidth = containerWidth;
-                        canvasHeight = canvasWidth / ASPECT_RATIO;
-                    }
-                    
-                    canvas.style.width = `${canvasWidth}px`;
-                    canvas.style.height = `${canvasHeight}px`;
-                    
-                    const dpr = window.devicePixelRatio || 1;
-                    canvas.width = canvasWidth * dpr;
-                    canvas.height = canvasHeight * dpr;
-                    context.scale(dpr, dpr);
+                    canvas.style.width = `${CANVAS_WIDTH * scale}px`;
+                    canvas.style.height = `${CANVAS_HEIGHT * scale}px`;
                 };
 
                 resizeCanvas();
-                
                 window.addEventListener('resize', resizeCanvas);
                 
                 context.fillStyle = "white";
@@ -1250,7 +1238,14 @@ const Canvas = ({ setScores, ship, aliens, bosses, items, setHp, setCollectedIte
     }, []);
 
     return (
-        <div style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+         <div style={{ 
+            width: '100vw', 
+            height: '100vh', 
+            display: 'flex', 
+            justifyContent: 'center', 
+            alignItems: 'center',
+            overflow: 'hidden'
+        }}>
             <canvas 
                 ref={ref} 
                 id="canvas" 
