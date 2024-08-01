@@ -3,7 +3,7 @@
     margin: 0 auto;
     display: flex;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem; /* Reduced gap */
+    gap: 3rem;
     margin-bottom: 2rem;
 }
 
