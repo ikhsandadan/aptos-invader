@@ -166,7 +166,7 @@ const Homepage = () => {
                                     </div>
 
                                     <div className="text-3xl font-bold text-center text-white mb-3">How To Play:</div>
-                                    <div className="text-2xl font-bold text-center text-white">Press the "x" button to shoot, Left Control (CTRL) to shoot laser, and arrows to move left or right!</div>
+                                    <div className="text-2xl font-bold text-center text-white">Press the &quot;x&quot; button to shoot, Left Control (CTRL) to shoot laser, and arrows to move left or right!</div>
                                 </div>
                                 <div className='flex flex-col p-6 w-full max-w-4xl border-t-2 items-center'>
                                     <div className='xl:w-full max-w-6xl flex flex-col items-center gap-y-9 mx-5 sm:mx-8 md:mx-9 xl:mx-auto pt-14 pb-20 md:pb-10 lg:pb-32 xl:pb-20'>
