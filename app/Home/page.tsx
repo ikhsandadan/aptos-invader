@@ -90,6 +90,10 @@ const Homepage = () => {
             return newClickedItems;
         });
     }, [currentItems]);
+
+    const handleHome = () => {
+        setStartGame(false);
+    };
     
     useEffect(() => {
         if (hp === 0) {
@@ -198,15 +202,20 @@ const Homepage = () => {
                             </div>
                         </div>
                     ) : (
-                        <Canvas
-                            setScores={setScores}
-                            ship={ship}
-                            aliens={aliens}
-                            bosses={bosses}
-                            items={items}
-                            setHp={setHp}
-                            setCollectedItems={setCollectedItems}
-                        />
+                        <div className='flex flex-col items-center'>
+                            <Canvas
+                                setScores={setScores}
+                                ship={ship}
+                                aliens={aliens}
+                                bosses={bosses}
+                                items={items}
+                                setHp={setHp}
+                                setCollectedItems={setCollectedItems}
+                            />
+                            <div>
+                                <button onClick={handleHome} className='bg-white rounded-md px-4 py-2 mt-4 text-black hover:bg-transparent hover:text-white hover:border hover:border-white'>Back to home</button>
+                            </div>
+                        </div>
                     )}
                 </div>
             ) : (
