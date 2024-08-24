@@ -767,7 +767,7 @@ const AppContextProvider: FC<{ children: ReactNode }> = ({ children }) => {
         const loadingMessage = `Please wait. Funding wallet...`;
         const id = setLoadingAlertMessage(loadingMessage);
         try {
-            await aptos.fundAccount({ accountAddress: address, amount: 100 });
+            await aptos.fundAccount({ accountAddress: address, amount: 100_000_000 });
             await fetchBalance(address);
             setLoadingUpdateAlertMessage(id, `Successful to fund wallet to 0x${address.toString().substring(2, 6)}...${address.toString().substring(address.toString().length - 5, address.toString().length)}`, "success");
         } catch (error: any) {
