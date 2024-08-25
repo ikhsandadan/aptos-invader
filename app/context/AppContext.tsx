@@ -355,14 +355,10 @@ const AppContextProvider: FC<{ children: ReactNode }> = ({ children }) => {
                     functionArguments: [itemObjectAddress],
                 },
             });
-
-            console.log(response);
     
             const [name, attributes] = response;
     
             const typeAttributes = attributes as { image: string, rarity: string};
-
-            console.log(typeAttributes);
     
             setOwnedItems((prevItems) => {
                 if (prevItems.some(item => item.name === name)) {
@@ -555,9 +551,6 @@ const AppContextProvider: FC<{ children: ReactNode }> = ({ children }) => {
                         const [nftAddress, name, sellerAddress] = await getListingObjectAndSeller(listingObjectAddress);
                         const price = await getListingObjectPrice(listingObjectAddress);
     
-                        console.log("Listing Object Address: ", listingObjectAddress);
-                        console.log("NFT Address: ", nftAddress, "Name: ", name, "Price: ", price, "Seller: ", sellerAddress);
-    
                         // Find the item details
                         const itemDetails = items.find((item: any) => item.name === name);
                         if (!itemDetails) return;
@@ -607,8 +600,6 @@ const AppContextProvider: FC<{ children: ReactNode }> = ({ children }) => {
             // If rarity is the same, sort by price (assuming price is a number)
             return Number(b.price) - Number(a.price);
         });
-    
-        console.log("sortedListedItems:", sortedListedItems);
     
         // Update state with sorted items
         setListedNfts(sortedListedItems);
